@@ -1,4 +1,5 @@
-// pixabay-api.js
+
+
 export async function fetchImages(searchQuery) {
   const apiKey = '43045926-d10eb038526040017b5fd39ad'; 
   const baseUrl = 'https://pixabay.com/api/';
@@ -10,7 +11,7 @@ export async function fetchImages(searchQuery) {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    return data.hits; // Повертаємо масив зображень
+    return data.hits; 
   } catch (error) {
     console.error('Error fetching data: ', error);
     throw error;

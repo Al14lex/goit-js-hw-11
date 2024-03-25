@@ -19,6 +19,8 @@ document.getElementById('form').addEventListener('submit', async (event) => {
     return;
   }
   
+  document.getElementById('loader').style.display = 'block';
+
   try {
     const images = await fetchImages(query);
     renderGallery(images);
@@ -28,5 +30,7 @@ document.getElementById('form').addEventListener('submit', async (event) => {
       title: 'Error',
       message: 'Failed to fetch images. Please try again later.',
     });
+  } finally {
+        document.getElementById('loader').style.display = 'none';
   }
 });
